@@ -1,0 +1,49 @@
+/* 마진 패딩 초기화 */
+* { padding: 0; margin: 0; list-style: none; }
+/* 페이지 기본 글꼴과 크기 설정 */
+body {  font-family: sans-serif;   font-size: 14px; }
+img { border: 0; }
+/*ul { list-style-type: none; }*/
+/* <a> 태그 기본 설정 */
+a { display: inline-block; text-decoration: none; }
+a:link { text-decoration:none; color: #222222; }
+a:hover {text-decoration:none; color: #222222; }
+a:visited { text-decoration:none; color: #222222; }
+a:active { text-decoration:none; color: #222222; }
+/* 상단 헤더 */
+#top { position: absolute; width: 100%; height: 30px; margin: 0 60px; }
+#top h3 {position: absolute; top: 0px; left: 80px; font-size: 23px; font-family: sans-serif; }
+#top #top_menu { float: right; margin: 16px 100px 0 0;}
+#top #top_menu li { display: inline-block; }
+#menu_bar {border:1px solid #6b4646; text-align: center; height: 42px; background-color: #ffffff; font-size: 16px; margin-top: 37px;}
+
+#menu_bar a:link { color: black; }
+#menu_bar a:hover { opacity: 1; visibility: visible; margin:0; padding-top: 3px; background:#96856d9c; }
+#menu_bar a:visited { color: black; }
+#menu_bar a:active { position: relative; color: black; }
+
+#main-menu{list-style: none; margin:0;display: inline-block; z-index: 1; }
+#main-menu li{height:30px; display:inline;list-style:none;float:left; position: relative;
+margin: 6px 37px; font-weight: bold;z-index: 1;}
+#main-menu li a{display:block; font-size: 16px;	padding:7px;z-index: 1; background-color: #ffffff; margin:0; text-decoration:none; } 
+/*서브메뉴 리스트 스타일*/
+#main-menu .side{text-decoration: none;}
+#main-menu ul li{display:hidden; float:none; margin: 0; padding:0; text-align: center; background-color: #ffffff; }
+#main-menu ul{width:200px;margin:1px -110px 60px; text-align: center; position:0; list-style: none; opacity: 0;}
+#main-menu ul a{font-weight: normal; color:white; font-size: 16px; font-weight: bold;}
+/*마우스 올렸을 때*/
+#main-menu li:hover ul{ visibility: visible;opacity: 1; z-index: 1;}
+#main-menu li:hover a{ visibility: visible; opacity: 1;font-weight: bold; /*background:#96856d9c; */}
+#main-menu li:hover ul>li{opacity: 1; visibility: visible; font-size: 17px;}
+#main-menu li:hover ul > li {left:50px; width : 150px; opacity: 1; visibility: visible; font-size: 17px; font-weight: bold;}
+
+/* 메인 이미지 */
+#main_img_bar { height: 240px; text-align: center; background-color: #2092aa; }
+#main_img_bar img { margin-top: 30px;}
+/* 하단 푸터 */
+footer { height: 100px; margin-top: 150px; background-color: burlywood;  }
+#footer_content { position: relative; width: 90%; margin: 0 auto; color: black;  }
+#footer_logo { position: absolute; top: 30px; left: 200px; font-size: 17px; }
+#footer_logo span { color: yellow; }
+#location { position: absolute; top: 20px; left:500px; text-align: left;}
+#mail { position: absolute; top: 20px; left: 1000px; text-align: left;}
