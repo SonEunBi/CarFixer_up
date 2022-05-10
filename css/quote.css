@@ -1,0 +1,66 @@
+
+.btn_quote{
+  background:#000000;
+  color:#fff;
+  border:none;
+  position:absolute;
+  top: 100%;
+  font-size:1.3em;
+  padding:2em 4em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+}
+.btn_quote:hover{
+  background:#fff;
+  color:#000000;
+}
+/*움직이는 선*/
+.btn_quote:before,.btn_quote:after{
+  content:'';
+  position: absolute;
+  top:0;
+  right:0;
+  height:2px; 
+  width:0px;
+  background: #000000;
+  transition:400ms ease all;
+}
+.btn_quote:after{
+  right:inherit;
+  top:inherit;
+  left: 0;
+  bottom: 0;
+}
+.btn_quote:hover:before,.btn_quote:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+h3 {
+    padding-left: 5px;
+    text-align: center;
+}
+img.guidep{
+/*clear: both;*/
+float:left;
+width:200px;
+margin-top: 70px;
+position: absolute;
+left:350px;
+
+}
+span.guide{
+    position: absolute;
+    float:right;
+    right:400px;
+    text-align: left;
+    width:700px;
+    font-weight: bold;
+    font-size: 15px;
+}
+.footerG{
+    bottom: 0;
+    width:100%;
+    margin-top: 560px;
+}

@@ -18,7 +18,7 @@ if (isset($_SESSION["userlevel"])) $userlevel = $_SESSION["userlevel"];
     $subject = $_POST["subject"];
     $content = $_POST["content"];
           
-    $con = mysqli_connect("localhost", "user1", "12345", "sample");
+    $con = mysqli_connect("localhost", "user1", "12345", "userdata");
     $sql = "update notice set subject='$subject', content='$content' ";
     $sql .= " where num=$num";
     mysqli_query($con, $sql);

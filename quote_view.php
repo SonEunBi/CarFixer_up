@@ -2,7 +2,7 @@
 <html>
 <head> 
 <meta charset="utf-8">
-<title>EB공공도서관</title>
+<title>비교 견적 사이트</title>
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 <link rel="stylesheet" type="text/css" href="./css/board.css">
 </head>
@@ -12,18 +12,18 @@
 </header>  
 <section>
 	 <!-- <div id="main_img_bar">   -->
-      <!--  <center><img src="./img/main4.png"></center>
-    </div> -->
+<!--        <center><img src="./img/main4.png"></center> -->
+    </div>
    	<div id="board_box">
 	    <h3 class="title">
-		    공지사항 > 내용보기
+			게시판 > 내용보기
 		</h3>
 <?php
 	$num  = $_GET["num"];
 	$page  = $_GET["page"];
 
 	$con = mysqli_connect("localhost", "user1", "12345", "userdata");
-	$sql = "select * from notice where num=$num";
+	$sql = "select * from board where num=$num";
 	$result = mysqli_query($con, $sql);
 
 	$row = mysqli_fetch_array($result);
@@ -41,7 +41,7 @@
 	$content = str_replace("\n", "<br>", $content);
 
 	$new_hit = $hit + 1;
-	$sql = "update notice set hit=$new_hit where num=$num";   
+	$sql = "update board set hit=$new_hit where num=$num";   
 	mysqli_query($con, $sql);
 ?>		
 	    <ul id="view_content">
@@ -63,18 +63,12 @@
 				<?=$content?>
 			</li>		
 	    </ul>
-
-	      
-				<li><button onclick="location.href='notice_list.php?page=<?=$page?>'">목록</button></li>
-    	
 	    <ul class="buttons">
-
-				<li><button onclick="location.href='notice_modify_form.php?num=<?=$num?>&page=<?=$page?>'">수정</button></li>
-				<li><button onclick="location.href='notice_delete.php?num=<?=$num?>&page=<?=$page?>'">삭제</button></li>
-				<li><button onclick="location.href='notice_form.php'">글쓰기</button></li>
+				<li><button onclick="location.href='board_list.php?page=<?=$page?>'">목록</button></li>
+				<li><button onclick="location.href='board_modify_form.php?num=<?=$num?>&page=<?=$page?>'">수정</button></li>
+				<li><button onclick="location.href='board_delete.php?num=<?=$num?>&page=<?=$page?>'">삭제</button></li>
+				<li><button onclick="location.href='board_form.php'">글쓰기</button></li>
 		</ul>
-
-
 	</div> <!-- board_box -->
 </section> 
 <footer>

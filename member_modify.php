@@ -8,7 +8,7 @@
 
     $email = $email1."@".$email2;
           
-    $con = mysqli_connect("localhost", "user1", "12345", "sample");
+    $con = mysqli_connect("localhost", "user1", "12345", "userdata");
     $sql = "update members set pass='$pass', name='$name' , email='$email'";
     $sql .= " where id='$id'";
     mysqli_query($con, $sql);

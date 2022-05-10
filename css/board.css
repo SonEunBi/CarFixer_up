@@ -1,6 +1,6 @@
 /* 게시판 글쓰기(board_form.php) */
 #board_box { position: relative; width: 800px; margin: 0 auto; }
-#board_box h3 { font-family: sans-serif; margin-top: 30px;	padding: 10px; border-bottom: solid 2px #97765a; font-size: 20px; color:#97764C; }
+#board_box h3 { font-family: sans-serif; margin-top: 30px;	padding: 10px; border-bottom: solid 2px #444; font-size: 20px; color:#444; }
 #board_form span { display: inline-block; }
 #board_form .col1 { width: 150px; }
 #board_form li {	padding: 12px; border-bottom: solid 1px #dddddd; }
@@ -25,12 +25,13 @@
 #page_num li { display: inline; }
 /* 게시판 내용보기(board_view.php) */
 #board_box { width: 800px; margin: 0 auto; }
-#board_box .title { margin-top: 30px; padding: 10px; border-bottom: solid 2px #516e7f; font-size: 20px; }
+#board_box .title { margin-top: 30px; padding: 10px; border-bottom: solid 2px #000000; font-size: 20px; }
 #view_content li:nth-child(1) {	padding: 15px; border-bottom: solid 2px #aaaaaa; }
 #view_content .col2 { float: right; }
 #view_content li:nth-child(2) {	padding: 15px 15px 80px 15px; border-bottom: solid 1px #cccccc; }
 #view_content li:nth-child(3) button { padding: 5px 20px; margin: 15px 0 40px 720px; cursor: pointer; }
-/*book_list*/
+/*price_list*/
 #board_list .col1 { width: 80px; }
 #board_list .col2 { width: 330px; text-align: left; }
 #board_list .col3 { width: 100px; }
+

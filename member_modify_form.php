@@ -2,7 +2,7 @@
 <html>
 <head> 
 <meta charset="utf-8">
-<title>PHP 프로그래밍 입문</title>
+<title>비교 견적 사이트</title>
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 <link rel="stylesheet" type="text/css" href="./css/member.css">
 <script type="text/javascript" src="./js/member_modify.js"></script>
@@ -12,7 +12,7 @@
     	<?php include "header.php";?>
     </header>
 <?php    
-   	$con = mysqli_connect("localhost", "user1", "12345", "sample");
+   	$con = mysqli_connect("localhost", "user1", "12345", "userdata");
     $sql    = "select * from members where id='$userid'";
     $result = mysqli_query($con, $sql);
     $row    = mysqli_fetch_array($result);

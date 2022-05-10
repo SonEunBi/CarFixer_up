@@ -3,7 +3,7 @@
 <html>
 <head> 
   <meta charset="utf-8">
-  <title>EB공공도서관</title>
+  <title>비교 견적 사이트</title>
   <link rel="stylesheet" type="text/css" href="./css/common.css">
   <link rel="stylesheet" type="text/css" href="./css/board.css">
 
@@ -15,10 +15,8 @@
   <div id="board_box"> 
     <h1 id="board_title"></h1>
     <h3>자료 검색</h3>
-
   </div>
-
-
+  
   <style>
     h3{
       margin-bottom: -20px;
