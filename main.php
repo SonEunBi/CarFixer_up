@@ -1,7 +1,7 @@
       <link rel="stylesheet" type="text/css" href="./css/main.css">
         <!-- <div id="main_img_bar"> -->
             <br><br><br><br>
-         <center><img src="./img/main2.png" style="z-index=100; margin:30px;" ></center> 
+         <br><br><br><br><br><br><br>
          <br><br><br>
 
      </div>

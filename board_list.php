@@ -2,17 +2,17 @@
 <html>
 <head> 
 <meta charset="utf-8">
-<title>EB공공도서관</title>
+<title>견적 비교 사이트</title>
 <link rel="stylesheet" type="text/css" href="./css/common.css">
 <link rel="stylesheet" type="text/css" href="./css/board.css">
 </head>
 <body> 
 <header>
+
     <?php include "header.php";?>
+    <br><br><br><br><br><br><br>
 </header>  
 <section>
-	<!-- <div id="main_img_bar"> -->
-        <center><img src="./img/main2.png"></center>
     </div>
    	<div id="board_box">
 	    <h3>

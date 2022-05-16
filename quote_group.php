@@ -16,7 +16,7 @@
     <div id="board_box">
       <h1 id="board_title"></h1>
 <br>
-      <h3>한꺼번에 수리 견적 조회하기</h3>
+      <h3>한꺼번에 파손 비교하기</h3>
       <style>
 
 .footerG{

@@ -17,7 +17,7 @@
 		<div id="board_box">
 			<h1 id="board_title"></h1>
 <br>
-			<h3>내 차 수리 견적 조회하기</h3>
+			<h3>내 차 파손 비교하기</h3>
 			<style>
 				.footerG{
 					bottom: 0;

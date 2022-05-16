@@ -8,9 +8,31 @@
   <link rel="stylesheet" type="text/css" href="./css/search.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <script type="text/javascript">
-    if(!isset($_SESSION)) { 
+
+  //낱개 아이템 - 전체선택 버튼 클릭시 체크박스 전체 선택
+  $(document).ready(function() {
+    $("#checkAll").click(function(){
+      if($("#checkAll").is(":checked"))
+        $("input[class=chk]").prop("checked", true);
+      else 
+        $("input[class=chk]").prop("checked", false);
+    });
+
+
+    // 전체 선택 중 한개의 체크박스 선택 해제 시 전체선택 체크박스 해제
+    $("input[class=chk]").click(function(){
+      var total = $("input[class=chk]").length;
+      var checked = $("input[class='chk']:checked").length;
+      if(checked != total) $("#checkAll").prop("checked", false);
+      else 
+        $("#checkAll").prop("checked", true);
+    });
+  });
+
+      if(!isset($_SESSION)) { 
       session_start(); 
     } 
+    //보이기, 안 보이기
     function find_normal()  {
       row1 = document.getElementById('wrapper2');
       row1.style.display = 'none';
@@ -27,60 +49,13 @@
       row = document.getElementById('wrapper2');
       row.style.display = '';
     }
-
-    $("input:checkbox[name=chk]:checked").each(function(){
-      var checkVal = $(this).val();
-      console.log(checkVal);
-    });
-
-
-  // 낱개 아이템 - 전체선택 버튼 클릭시 체크박스 전체 선택
-  //   $(document).ready(function() {
-  //     $("#checkAll").click(function(){
-  //       if($("#checkAll").is(":checked"))
-  //         $("input[name=chk]").prop("checked", true);
-  //       else 
-  //         $("input[name=chk]").prop("checked", false);
-  //     });
-
-
-  //   // 전체 선택 중 한개의 체크박스 선택 해제 시 전체선택 체크박스 해제
-  //   $("input[name=chk]").click(function(){
-      // var total = $("input[name=chk]").length;
-  //     var checked = $("input[name='chk']:checked").length;
-  //     if(checked != total) $("#checkAll").prop("checked", false);
-  //     else 
-  //       $("#checkAll").prop("checked", true);
-  //   });
-  // });
 </script>
 </head>
 <style>
-  .search_btn{
-    box-sizing: border-box;
-    appearance: none;
-    background-color: transparent;
-    border: 2px solid $red;
-    border-radius: 0.6em;
-    color: $red;
-    cursor: pointer;
-    display: flex;
-    align-self: center;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1;
-    margin: 20px;
-    padding: 1.2em 2.8em;
-    text-decoration: none;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-
-  transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
-  /*&:hover {*/
-    box-shadow: 0 0 40px 40px $red inset;
-  /*}*/
+  table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
 </style>
 
 <body> 
@@ -113,59 +88,62 @@
           <form action="" name="writeform" method="POST">
             <center>
               <table style="border: 2px solid #444;" id="wrapper">
-                <tr height=60 ><th width= 200> 
+                <tr height=80 style="border:1px solid #444;"><th width= 200> 
                 부품명</th>
-                <td width =600> 
-                  <label><input type="checkbox" name ="name" class="chk" value="Bumper">범퍼</label>&nbsp;
-                  <label><input type="checkbox" name ="name" class="chk" value="FrontDoor">앞문</label>&nbsp;
-                  <label><input type="checkbox" class="chk"name ="name" value="RearDoor">뒷문</label>&nbsp;
-                  <label><input type="checkbox" class="chk"name ="name" value="trunk">트렁크도어</label>&nbsp;
-                  <label><input type="checkbox" class="chk"name ="name" value="tire">타이어</label>&nbsp;   
+                <td width =600> &nbsp;
+                  <label><input type="checkbox" id="checkAll" name ="name"><b>전체</b></label>&emsp;
+                  <label><input type="checkbox" name ="name" class="chk" value="범퍼">범퍼</label>&emsp;
+                  <label><input type="checkbox" name ="name" class="chk" value="보넷">보넷</label>&emsp;
+                  <label><input type="checkbox" class="chk"name ="name" value="트렁크">트렁크</label>&emsp;
+                  <label><input type="checkbox" class="chk"name ="name" value="루프">루프</label>&emsp; 
+                  <label><input type="checkbox" class="chk"name ="name" value="도어">도어</label>&emsp; 
+                  <label><input type="checkbox" class="chk"name ="name" value="스테프">스테프</label>&emsp;
+                  <label><input type="checkbox" class="chk"name ="name" value="휀더">휀더</label>&emsp;
+                  <label><input type="checkbox" class="chk"name ="name" value="기타">기타</label>&emsp;
                 </td></tr>
 
-                <tr height=60 ><th width= 200>위치</th></div>
-                  <td width =600> 
-                    <label><input type="checkbox" name="chk"name ="location">전면</label>&nbsp;
-                    <label><input type="checkbox" name="chk"name ="location">후면</label>&nbsp;
-                    <label><input type="checkbox" name="chk"name ="location">좌측면</label>&nbsp;
-                    <label><input type="checkbox" name="chk"name ="location">우측면</label>&nbsp; 
+
+                <tr height=80 ><th width= 200>차종</th></div>&nbsp;
+                  <td width =600> &nbsp;
+                    <label><input type="checkbox" name ="cartype" value="세단">세단</label>&emsp;
+                    <label><input type="checkbox" name ="cartype" value="쿠페">쿠페</label>&emsp;
+                    <label><input type="checkbox" name ="cartype" value="왜건">왜건</label>&emsp;
+                    <label><input type="checkbox" name ="cartype" value="SUV">SUV</label>&emsp; 
+                    <label><input type="checkbox" name ="cartype" value="컨버터블">컨버터블</label><br><br>  &nbsp;
+                    <label><input type="checkbox" name ="cartype" value="해치백">해치백</label>&emsp; 
+                    <label><input type="checkbox" name ="cartype" value="리무진">리무진</label>&emsp; 
+                    <label><input type="checkbox" name ="cartype" value="밴">밴</label>&emsp; 
+                    <label><input type="checkbox" name ="cartype" value="픽업트럭">픽업트럭</label>&emsp; 
                   </td></tr>
 
 
-                  <tr height=60 ><th width= 200>제작사</th></div>
-                    <td width =600> 
-                     <!--  <label><input type="checkbox" id="checkAll"><b> 전체</b>&nbsp;</label> -->
-                     <label><input type="checkbox" name="chk" name ="company">현대</label>&nbsp;
-                     <label><input type="checkbox" name="chk" name ="company">기아</label>&nbsp;
-                     <label><input type="checkbox" name="chk" name ="company">르노삼성</label>&nbsp;
-                     <label><input type="checkbox" name="chk" name ="company">GM</label>&nbsp;
-                     <label><input type="checkbox" name="chk" name ="company">쌍용</label>&nbsp;
+                  <tr height=80 ><th width= 200>카센터 위치</th></div>
+                    <td width =600> &nbsp;
+                     <label><input type="checkbox" name ="location" value="서울">서울</label>&nbsp;
+                     <label><input type="checkbox" name ="location" value="부산">부산</label>&nbsp;
+                     <label><input type="checkbox" name ="location" value="대구">대구</label>&nbsp;
+                     <label><input type="checkbox" name ="location" value="인천">인천</label>&nbsp;
+                     <label><input type="checkbox" name ="location">광주</label>&nbsp;
+                     <label><input type="checkbox" name ="location">대전</label>&nbsp;
+                     <label><input type="checkbox" name ="location">울산</label>&nbsp;
+                     <label><input type="checkbox" name ="location">강원</label>&nbsp;<br><br>&nbsp;
+                     <label><input type="checkbox" name ="location">경기</label>&nbsp;
+                     <label><input type="checkbox" name ="location">경남</label>&nbsp;
+                     <label><input type="checkbox" name ="location">경북</label>&nbsp;
+                     <label><input type="checkbox" name ="location">전남</label>&nbsp;
+                     <label><input type="checkbox" name ="location">전북</label>&nbsp;
+                     <label><input type="checkbox" name ="location">제주</label>&nbsp;
+                     <label><input type="checkbox" name ="location">충남</label>&nbsp;
+                     <label><input type="checkbox" name ="location">충북</label>&nbsp;
                    </td></tr>
 
 
-                   <tr height=60><th width= 200>지역</th>
-                    <td width =600> 
-                     <label><input type="checkbox" name="chk" name ="region">서울</label>&nbsp;
-                     <label><input type="checkbox" name="chk" name ="region">경기도</label>&nbsp;
-                     <label><input type="checkbox" name="chk" name ="region">충청도</label>&nbsp;
-                     <label><input type="checkbox" name="chk" name ="region">전라도</label>&nbsp;
-                     <label><input type="checkbox" name="chk" name ="region">강원도</label>&nbsp;
-                     <label><input type="checkbox" name="chk" name ="region">경상도</label>&nbsp;
-                   </td></tr>
+                   <tr height=80><th width= 200>가격</th>
+                    <td width =600> &nbsp;
+                      <input type="text" placeholder="가격" style="height: 40px;">
+                      &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
 
-                   <tr height=60><th width= 200>가격</th>
-                    <td width =600> 
-                      <input type="checkbox" id="chk">
-                      <label for="part_car">현대</label>&nbsp;
-                      <input type="checkbox" id="chk">
-                      <label for="part_car">기아</label>&nbsp;
-                      <input type="checkbox" id="chk">
-                      <label for="part_car">르노삼성</label>&nbsp;
-                      <input type="checkbox" id="chk">
-                      <label for="part_car">GM</label>&nbsp;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <input id="search_btn" type="button" value="검색" action="price_list.php" onclick="location.href='price_list.php'">
+                      <input id="search_btn" type="button" value="검색" action="price_list.php" onclick="location.href='price_list.php'" style="background-color: black; color: whitesmoke;">
                     </td></tr>
                   </table>
                 </form>
@@ -174,11 +152,11 @@
 
             <center>
               <table id='wrapper2'>
-                <tr height=60><th width= 200>부품 번호</th>
+                <tr height=60><th width= 200>부품 번호</th>&nbsp;
                   <td width =600> 
-                    <div method="post" action="price_list.php">
-                      <input id="search_view" type="text" name="name" action="price_list.php" placeholder="  부품 번호를 입력하세요">&nbsp;
-                      <input id="search_btn" type="button" value="검색" action="price_list.php" onclick="location.href='price_list.php'">
+                    <div method="post" action="price_list.php">&nbsp;
+                      <input id="search_view" type="text" name="num" action="price_list.php" placeholder="  부품 번호를 입력하세요">&nbsp;&emsp;&emsp;&emsp;
+                      <input id="search_btn" type="button" value="검색" action="price_list.php" onclick="location.href='price_list.php'"style="background-color: black; color: whitesmoke;">
                     </td></tr>
                   </table></center></div>
 

@@ -42,23 +42,27 @@
 			<table class="search_result" border ="0" align="center">
 
 				<tr>
-					<th width="100">순번</th><th width="170">부품명</th><th width="170">부품 위치</th><th width="170">거래 지역</th><th width="170">가격</th>
+					<th width="100">부품번호</th><th width="170">부품명</th><th width="170">차종</th><th width="170">카센터 위치</th><th width="170">가격</th>
 				</tr><br>
 
 			</table>
 		</center>
 
 		<?php
-		if(isset($_POST["name"]))
+		if(isset($_POST["name"]) && isset($_POST["location"] && isset($_POST["num"])
+		 || isset($_POST["cartype"] || isset($_POST["price"])){
 			$name = $_POST["name"];
-		else{
-			$name=null;
-			echo "<br>   <br>";
-		}
-		$con = mysqli_connect("localhost", "user1", "12345", "carinfo");
-		$sql = "select * from usercar WHERE name LIKE '%$name%' order by name asc";           
-		$result = mysqli_query($con, $sql);
-		$row=mysqli_fetch_array($result);
+			$location = $_POST["location"];
+			$num = $_POST["num"];}
+			// $price = $_POST["price"];
+			else{
+				$name=null;
+				echo "<br>   <br>";
+			}
+			$con = mysqli_connect("localhost", "user1", "12345", "carinfo");
+			$sql = "select * from usercar WHERE num LIKE '%$num%' order by name asc";           
+			$result = mysqli_query($con, $sql);
+			$row=mysqli_fetch_array($result);
   	$total_record = mysqli_num_rows($result); // 전체 글 수
            // $total_rows=$row[0];
   	$num_match = mysqli_num_rows($result);
@@ -82,20 +86,20 @@
                // 가져올 레코드로 위치(포인터) 이동
   			$row = mysqli_fetch_array($result);
                // 하나의 레코드 가져오기
+  			$num        = $row["num"];
   			$name        = $row["name"];
   			$location   = $row["location"];
-  			$num          = $row["company"];
-  			$region    = $row["region"];
+  			$cartype    = $row["cartype"];
   			$price    = $row["price"];
   			?>
 
   			<center>
   				<table class="search_result" border ="0" style="height: 100px;">
   					<tr>
-  						<td><?= $num ?></td>
-  						<td><mark><?= $name ?></mark></td>
+  						<td><mark><?= $num ?></mark></td>
+  						<td><?= $name ?></td>
   						<td><?= $location ?></td>
-  						<td><?= $region ?></td>
+  						<td><?= $cartype ?></td>
   						<td><?= $price?></td>
   					</tr>
   				</table>

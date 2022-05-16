@@ -1,6 +1,6 @@
 <?php
  
-    $files= $_FILES['aaa'];
+    $files= $_FILES['input_file'];
  
     // files라는 2차원배열의 사이즈
     $num= count($files); //출력 : 5
