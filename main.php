@@ -1,7 +1,6 @@
       <link rel="stylesheet" type="text/css" href="./css/main.css">
         <!-- <div id="main_img_bar"> -->
-            <br><br><br><br>
-         <br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br>
          <br><br><br>
 
      </div>

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
     <html>
     <head>
         <meta charset="utf-8">
@@ -146,7 +146,6 @@ nav .fa.fa-angle-down { margin-left: 6px; }
             <li class="side" ><a href="#">자유게시판</a>
              <ul class="sub">
                <li><a href="board_list.php">자료 신청</a></li>
-               <li><a href="message_form.php">건의 사항</a></li>
            </ul>
        </li>
        <li>|</li>
