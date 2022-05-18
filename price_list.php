@@ -100,16 +100,6 @@
   			$cartype    = $row["cartype"];
   			$location   = $row["location"];
   			$price    = $row["price"];
-  			
-
-  			$con = mysqli_connect("localhost", "user1", "12345", "carinfo");
-
-  			$sql = "select avg('price') as '평균가' 
-  			from usercar where location = '$rslocation'
-  			group by partname";
-
-  			$result = mysqli_query($con, $sql);
-  			$row=mysqli_fetch_array($result);
   			?>
 
 
@@ -130,19 +120,50 @@
   	mysqli_close($con);
 
   	?>
-  </ul>
+
+  	<?php
+
+  		$con = mysqli_connect("localhost", "user1", "12345", "carinfo");
+  		$sql = "select avg(price) as avg from usercar where location = '$rslocation'";
+
+  		$result = mysqli_query($con, $sql);
+  		$row=mysqli_fetch_array($result);
+  		echo $row['avg'];
+  	?>
 
 
-  <center>
-  	<br><br><br>
-  	<form class="search_view" method="post" action="price_list.php">
-  		<input type="text" name="name" placeholder="부품명"> 
-  		<input class="search_btn" type="submit" value="재검색" action="price_list.php"> </form> </center>
-  		<br><br><br>
-  	</div> <!-- main_content -->
+  	<center><br>
+  		<table class="search_result" border ="0" style="height: 100px;">
+  			<tr>
+  				<td><mark><?= $partname ?></mark></td>
+  				<td><mark><?= $location ?></mark></td>
+  				<td><mark><?= $cartype ?></mark></td>
+  				<td><?= $row['avg']?></td>
+  			</tr>
+  		</table>
+  	</center>
+  	<?php
+  
+  mysqli_close($con);
 
-  	<footer class="footerSc">
-  		<?php include "footer.php";?>
-  	</footer>
-  </body>
-  </html>
+  ?>
+
+
+
+
+</ul>
+
+
+<center>
+	<br><br><br>
+	<form class="search_view" method="post" action="price_list.php">
+		<input type="text" name="name" placeholder="부품명"> 
+		<input class="search_btn" type="submit" value="재검색" action="price_list.php"> </form> </center>
+		<br><br><br>
+	</div> <!-- main_content -->
+
+	<footer class="footerSc">
+		<?php include "footer.php";?>
+	</footer>
+</body>
+</html>
