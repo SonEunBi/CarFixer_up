@@ -74,8 +74,8 @@
 	
 	$con = mysqli_connect("localhost", "user1", "12345", "sample");
 
-	$sql = "insert into shareboard (id, name, subject, partname, cartype, location, price, partnum, content, regist_day, hit,  file_name, file_type, file_copied) ";
-	$sql .= "values('$userid', '$username', '$subject', '$partname', '$cartype', '$location', '$price', '$content', '$regist_day', 0, ";
+	$sql = "insert into inquiryboard (id, name, subject, partname, cartype, partnum, content, regist_day, hit,  file_name, file_type, file_copied) ";
+	$sql .= "values('$userid', '$username', '$subject','$partname', '$cartype', '$partnum', '$content', '$regist_day', 0, ";
 	$sql .= "'$upfile_name', '$upfile_type', '$copied_file_name')";
 	mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
 1
@@ -94,7 +94,7 @@
 
 	echo "
 	   <script>
-	    location.href = 'board_list.php';
+	    location.href = 'inquiry_board_list.php';
 	   </script>
 	";
 ?>
