@@ -140,6 +140,8 @@ nav .fa.fa-angle-down { margin-left: 6px; }
                 <li class="side"><a href="#" >견적 비교</a>
                   <ul class="sub">
                     <li><a href="search.php"> 자료 검색</a></li>
+                     <li><a href="share_board_form.php">  검색</a></li>
+                     <li><a href="share_board_insert.php">  검색</a></li>
                 </ul>
             </li>
             <li>|</li>

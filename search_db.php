@@ -7,102 +7,29 @@
   <link rel="stylesheet" type="text/css" href="./css/board.css">
   <link rel="stylesheet" type="text/css" href="./css/search.css">
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <script type="text/javascript">
-
-  //낱개 아이템 - 전체선택 버튼 클릭시 체크박스 전체 선택
-  $(document).ready(function() {
-    $("#checkAll").click(function(){
-      if($("#checkAll").is(":checked"))
-        $("input[class=chk]").prop("checked", true);
-      else 
-        $("input[class=chk]").prop("checked", false);
-    });
-
-
-    // 전체 선택 중 한개의 체크박스 선택 해제 시 전체선택 체크박스 해제
-    $("input[class=chk]").click(function(){
-      var total = $("input[class=chk]").length;
-      var checked = $("input[class='chk']:checked").length;
-      if(checked != total) $("#checkAll").prop("checked", false);
-      else 
-        $("#checkAll").prop("checked", true);
-    });
-  });
-
-  if(!isset($_SESSION)) { 
-    session_start(); 
-  } 
-    //보이기, 안 보이기
-    function find_normal()  {
-      row1 = document.getElementById('wrapper2');
-      row1.style.display = 'none';
-
-      row1 = document.getElementById('wrapper');
-      row1.style.display = '';
-
-    }
-
-    function find_num()  {
-      row = document.getElementById('wrapper');
-      row.style.display = 'none';
-
-      row = document.getElementById('wrapper2');
-      row.style.display = '';
-    }
-
-
-    function chkprint(){
-      var values = document.getElementByName("location");
-      for(var i =0; i<values.length; i++){
-        if(values[i].checked){
-          // alert(values[i].value);
-        }
-      }
-    }
-
-
-//     function itemAvg(frm)
-// {
-//    var avg = 0;
-//    var count = frm.chkbox.length;
-//    for(var i=0; i < count; i++ ){
-//        if( frm.chkbox[i].checked == true ){
-//       sum += parseInt(frm.chkbox[i].value);
-//       avg /=
-//        }
-//    }
-//    frm.total_sum.value = sum;
-// }
-</script>
+  <script type="text/javascript" src="./js/search.js"></script>
 </head>
 <style>
   table, th, td{
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
+   border-collapse: collapse;
+   text-align: left;
+   line-height: 1.5;
+
+   border: 1px solid black;
+   border-collapse: collapse;
+ }
 </style>
 
 <body> 
-<!-- <%
-  String[] value = request.getParameterValues("")
--->
-<header>
-  <?php include "header.php";?>
-</header>  
-<br><br><br>
-<div id="board_box"> 
-  <h1 id="board_title"></h1>
-  <h3>자료 검색</h3>
-</div>
+  <header>
+    <?php include "header.php";?>
+  </header>  
+  <br><br><br>
+  <div id="board_box"> 
+    <h1 id="board_title"></h1>
+    <h3>자료 검색</h3>
+  </div>
 
-
-<!-- 검색창 -->
-<!-- <div class="search" style="height: 100px; margin-top: 17px; margin: auto;"> -->
-<!--       <tr height=45><th width= 200>검색 방식</th>
-        <td width =600> 
-         
-          
-        </td></tr></form> -->
         <br><br> 
 
         <div id="btn_group" style="margin-left:40%"><br><br>
@@ -165,33 +92,31 @@
                  </table></center>
 
                  <button id="search_btn" type="submit" value="검색" action="price_list.php" onclick="location.href='price_list.php'" style="background-color: black; color: whitesmoke; right:370px" >검색</button>
+               </form>
 
-                 <button id="search_btn1" type="submit" value="검색" action="search_db.php" onclick="location.href='search_db.php'" style="background-color: black; color: whitesmoke; right:370px" >내부검색</button>
-</form>
+               <center>
+                <table id='wrapper2'>
+                  <tr height=60><th width= 200>부품 번호</th>&nbsp;
+                    <td width =600> 
 
-                 <center>
-                  <table id='wrapper2'>
-                    <tr height=60><th width= 200>부품 번호</th>&nbsp;
-                      <td width =600> 
+                      <form method="post" action="search_list_part.php">&nbsp;
 
-                        <form method="post" action="book_list.php">&nbsp;
-
-                          <input id="search_view" type="text" name="partnum" action="book_list.php" placeholder="  부품 번호를 입력하세요">&nbsp;&emsp;&emsp;&emsp;
+                        <input id="search_view" type="text" name="partnum" action="search_list_part.php" placeholder="  부품 번호를 입력하세요">&nbsp;&emsp;&emsp;
 
 
-                          <button id="search_btn2" type="submit" value="부품검색" action="book_list.php" onclick="location.href='book_list.php'"style="background-color: black; color: whitesmoke;">부품검색</button>
+                        <button id="search_btn2" type="submit" value="부품검색" height = "80px"action="search_list_part.php" onclick="location.href='search_list_part.php'"style="background-color: black; color: whitesmoke;">부품 검색</button>
 
-                        </td></tr>
-                      </table></center></div></form>
+                      </td></tr>
+                    </table></center></div></form>
 
 
-                      <div>
-                        <h3 id="board_title"></h3>  
-                      </div> <!-- board_box -->
-                      <footer class="footerSc">
-                        <?php include "footer.php";?>
-                      </footer>
-                    </body>
-                    </html>
+                    <div>
+                      <h3 id="board_title"></h3>  
+                    </div> <!-- board_box -->
+                    <footer class="footerSc">
+                      <?php include "footer.php";?>
+                    </footer>
+                  </body>
+                  </html>
 
 
