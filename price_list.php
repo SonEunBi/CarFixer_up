@@ -27,23 +27,32 @@
 		table.search_result{
 			border-collapse: collapse;
 			text-align: left;
+			
+			vertical-align: middle;
 			line-height: 1.5;
 			width:60%;
-			background-color: #929292;
 		}
-		table.search_result	tbody, th{
+		table.search_result	th, thead{
+			padding: 10px;
+			font-weight: bold;
+			vertical-align: middle;
+			color: #369;
+			border-bottom: 3px solid #036;
+		}
+		table.search_result	tbody{
 			width: 150px;
 			padding: 10px;
 			font-weight: bold;
-			vertical-align: top;
+			vertical-align: middle;
 			border-bottom: 1px solid #ccc;
-			background: #f3f6f7;
+			background: white;
 			/*padding:8px;
 			text-align: center;
 			background-color: white;*/
 		}
 		table.search_result	td{
 			width: 350px;
+			height: 70px;
 			padding: 10px;
 			vertical-align: top;
 			border-bottom: 1px solid #ccc;
