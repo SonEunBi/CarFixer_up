@@ -46,15 +46,14 @@
 </section> <br><br>
 <center>
 
-<form action="./quote_group_recv" method="POST" enctype="multipart/form-data" >
-<label class="btn_quote" for="input_file"style="left: 50px;">파일 선택</label>
-<input type="file" id="input_file" multiple style="left: 100px;" />
+<form action="./quote_group_recv.php" method="POST" enctype="multipart/form-data" >
+  <label class="btn_quote" for="input_file"style="left: 50px;">파일 선택</label>
+
+  <input type="file" id="input_file" name="input_file[]" multiple style="left: 100px;" />
+  <label class="btn_quote" for="submit_file">단체 견적 확인하기</label>
+  <input type="submit" id="submit_file" style = "display:none"/>
 </form>
 
-<form action="./quote_group_recv" method="POST" enctype="multipart/form-data">
-<label class="btn_quote" for="submit_file">단체 견적 확인하기</label>
-<input type="submit" id="submit_file" style = "display:none"/>
-</form>
 </center>
 
 <footer class="footerG">
