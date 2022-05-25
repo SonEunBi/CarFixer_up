@@ -47,9 +47,9 @@
   <!-- 검색창 -->
   <div class="search" style="height: 100px; margin-top: 17px;">
     <br><br> <center>
-      <form method="post" action="book_list.php" style="float=center;">
-        <input id="search_view" type="text" name="name" action="book_list.php" placeholder="  검색어를 입력하세요"></center>
-        <input id="search_btn" type="submit" value="검색" action="book_list.php" style="font-size:large; border-radius: 32px; height:59px; width:65px; position: absolute; right: 460px; top: 210px;"></div></form>
+      <form method="post" action="search_list_part.php" style="float=center;">
+        <input id="search_view" type="text" name="name" action="search_list_part.php" placeholder="  검색어를 입력하세요"></center>
+        <input id="search_btn" type="submit" value="검색" action="search_list_part.php" style="font-size:large; border-radius: 32px; height:59px; width:65px; position: absolute; right: 460px; top: 210px;"></div></form>
 
         <div>
           <h3 id="board_title"></h3>  

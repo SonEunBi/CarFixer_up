@@ -2,7 +2,7 @@
 <html>
 <head> 
 	<meta charset="utf-8">
-	<title>EB공공도서관</title>
+	<title>비교 견적 사이트</title>
 	<link rel="stylesheet" type="text/css" href="./css/common.css">
 	<link rel="stylesheet" type="text/css" href="./css/board.css">
 
@@ -24,32 +24,47 @@
 			width:100%;
 			margin-top: 320px;
 		}
-		table{
-			width:53%;
-			border-top:1px solid black;
-
-			background-color: #929292;}
-			th, td{
-
-				border-bottom: 1px solid black;
-				padding:8px;
-				text-align: center;
-				background-color: white;
-			}
-			td:nth-child(1){width: 100px;}
-			td:nth-child(2){width: 170px;}
-			td:nth-child(3){width: 170px;}
-			td:nth-child(4){width: 170px;}
-			td:nth-child(5){width: 170px;}
-		</style>
-		<center>
-			<table class="search_result" border ="1" align="center">
-
+		table.search_result{
+			border-collapse: collapse;
+			text-align: left;
+			
+			vertical-align: middle;
+			line-height: 1.5;
+			width:60%;
+		}
+		table.search_result	th, thead{
+			padding: 10px;
+			font-weight: bold;
+			vertical-align: middle;
+			color: #369;
+			border-bottom: 3px solid #036;
+		}
+		table.search_result	tbody{
+			width: 150px;
+			padding: 10px;
+			font-weight: bold;
+			vertical-align: middle;
+			border-bottom: 1px solid #ccc;
+			background: white;
+			/*padding:8px;
+			text-align: center;
+			background-color: white;*/
+		}
+		table.search_result	td{
+			width: 350px;
+			height: 70px;
+			padding: 10px;
+			vertical-align: top;
+			border-bottom: 1px solid #ccc;
+		}
+	</style>
+	<center>
+		<table class="search_result" align="center">
+			<thead>
 				<tr>
 					<th width="100">부품번호</th><th width="170">부품명</th><th width="170">차종</th><th width="170">카센터 위치</th><th width="170">가격</th>
 				</tr><br>
-
-			</table>
+			</thead>
 		</center>
 
 		<?php
@@ -60,7 +75,7 @@
 			echo "<br>   <br>";
 		}
 		$con = mysqli_connect("localhost", "user1", "12345", "carinfo");
-		$sql = "select * from usercar WHERE partnum = '$partnum%' order by partnum";     
+		$sql = "select * from usercar WHERE partnum = '$partnum' order by partnum";     
 
 		$result = mysqli_query($con, $sql);
 		$row=mysqli_fetch_array($result);
@@ -94,7 +109,7 @@
   			?>
 
   			<center><br>
-  				<table class="search_result2" border ="0" style="height: 100px;">
+  				<tbody>
   					<tr>
   						<td><?= $partnum ?></td>
   						<td><mark><?= $partname ?></mark></td>
@@ -102,29 +117,30 @@
   						<td><mark><?= $cartype ?></mark></td>
   						<td><?= $price?></td>
   					</tr>
-  				</table>
-  			</center>
-  			<?php
-  		}
+  				</tbody>
+  			</table>
+  		</center>
+  		<?php
   	}
-  	mysqli_close($con);
+  }
+  mysqli_close($con);
 
-  	?>
-  </ul>
+  ?>
+</ul>
 
-  <center>
-  	<br><br><br>
-  	<form method="post" action="book_list.php">&nbsp;
-  		<input id="search_view" type="text" name="partnum" action="book_list.php" placeholder="부품 번호를 입력하세요">&nbsp;&emsp;&emsp;&emsp;
+<center>
+	<br><br><br>
+	<form method="post" action="search_list_part.php">&nbsp;
+		<input id="search_view" type="text" name="partnum" action="search_list_part.php" placeholder="부품 번호를 입력하세요">&nbsp;&emsp;&emsp;&emsp;
 
-  		<button id="search_btn2" type="submit" value="부품검색" action="book_list.php" onclick="location.href='book_list.php'"style="background-color: black; color: whitesmoke;">부품검색</button>
+		<button id="search_btn2" type="submit" value="부품검색" action="search_list_part.php" onclick="location.href='search_list_part.php'"style="background-color: black; color: whitesmoke;">부품검색</button>
 
-  	</td></tr>
-  </table></form>
-  <!-- main_content -->
+	</td></tr>
+</table></form>
+<!-- main_content -->
 
-  <footer class="footerSc">
-  	<?php include "footer.php";?>
-  </footer>
+<footer class="footerSc">
+	<?php include "footer.php";?>
+</footer>
 </body>
 </html>

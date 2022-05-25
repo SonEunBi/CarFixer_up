@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
     <html>
     <head>
         <meta charset="utf-8">
@@ -137,15 +137,17 @@ nav .fa.fa-angle-down { margin-left: 6px; }
     <nav>
         <div id="container" style="z-index: 999;">
             <ul> 
-                <li class="side"><a href="#" >견적 비교</a>
+                <li class="side"><a href="#" >견적 게시판</a>
                   <ul class="sub">
-                    <li><a href="search.php"> 자료 검색</a></li>
+                    <li><a href="share_board.php"> 견적 정보 공유</a></li>
+                    <li><a href="inquiry_board.php"> 견적 정보 문의</a></li>
                 </ul>
             </li>
             <li>|</li>
             <li class="side" ><a href="#">자유게시판</a>
              <ul class="sub">
                <li><a href="board_list.php">자료 신청</a></li>
+               <li><a href="message_form.php">건의 사항</a></li>
            </ul>
        </li>
        <li>|</li>
@@ -158,7 +160,7 @@ nav .fa.fa-angle-down { margin-left: 6px; }
 
 
  <li> | </li>  
- <li class="side" ><a href="#">비교 게시판</a> 
+ <li class="side" ><a href="#">파손 비교</a> 
     <ul class="sub">
        <li><a href="quote_personal.php">개인 비교</a></li>
        <li><a href="quote_group.php">단체 비교</a></li>
