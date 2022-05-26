@@ -1,19 +1,7 @@
        <link rel="stylesheet" type="text/css" href="./css/common.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
         <div id="footer_content">
-            <img id="footer_logo" src="./img/img_logo.png" style= "z-index: 100; margin:30px;" >
-            <p id="footer_logo"> 견적 보러 가는 길 </p>
+          당 페이지에 모든 제품설명 및 디자인은 당사의 지적재산으로 법률상 보호를 받고 있으며, 이를 무단도용, 할시 민형사상의 처벌과 손해를 배상해야 합니다.<br>
+ Copyright(c) 2022 CarFixer .All rights reserved. | <a href="/index.php">Terms of service</a> | Contact: <a href="son@koreatech.co.kr">contact@symu.co</a>
 
-            <ul id="location">
-                <li><b>우편번호 31253</b></li>
-                <li>- 충청남도 천안시 동남구 병천면 충절로 1600</li>
-                <li>(주)QuoteAll | 충청남도 천안시 동남구 병천면 충절로 1600(병천면, 세상의모든견적)</li>
-
-            </ul>
-            <ul id="mail">
-                <li><b>문의 메일</b><li>
-                <li>- 메일 주소 : SEB@naver.com</li><br>
-                 <li><b>연락처</b><li>
-    <li>- 041-532-0123<li>
-            
-            </ul>
         </div>

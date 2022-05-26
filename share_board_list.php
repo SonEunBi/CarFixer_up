@@ -10,23 +10,17 @@
 	</style>
 	
 </head>
-<header>
+<body> 
+	<header>
 		<?php include "reply_idx.php";?>
 		<?php include "header.php";?>
 		<br><br><br><br><br><br><br>
 	</header>  
-<body> 
-	
-	
-<div class ="col-sm-3">
-    
-    </div>
-
-
+	<section>
 	</div>
 	<div id="board_box">
 		<h3>
-			가격 공유
+			신청·참여 > 자료신청
 		</h3>
 		<ul id="board_list">
 			<li>
@@ -149,7 +143,7 @@
 		<?php 
 		if($userid) {
 			?>
-			<button onclick="location.href='board_form.php'">글쓰기</button>
+			<button onclick="location.href='share_board_form.php'">글쓰기</button>
 			<?php
 		} else {
 			?>

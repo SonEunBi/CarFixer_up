@@ -1,5 +1,5 @@
 /* 게시판 글쓰기(board_form.php) */
-#board_box { position: relative; width: 800px; margin: 0 auto; }
+#board_box { position: relative; top: 20%; width: 800px; margin: 0 auto; }
 #board_box h3 { font-family: sans-serif; margin-top: 30px;	padding: 10px; border-bottom: solid 2px #444; font-size: 20px; color:#444; }
 #board_form span { display: inline-block; }
 #board_form .col1 { width: 150px; }

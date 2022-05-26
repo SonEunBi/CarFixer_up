@@ -23,6 +23,10 @@
    $subject = htmlspecialchars($subject, ENT_QUOTES);
    $content = htmlspecialchars($content, ENT_QUOTES);
 
+   $partname = $_POST['partname'];
+   $cartype = $_POST['cartype'];
+   $location = $_POST['location'];
+   $price = $_POST['price'];
    $regist_day = date("Y-m-d (H:i)");  // 현재의 '년-월-일-시-분'을 저장
 
    $upload_dir = './data/';
@@ -72,23 +76,12 @@
       $copied_file_name = "";
    }
    
-   $con = mysqli_connect("localhost", "user1", "12345", "sample");
+   $con = mysqli_connect("localhost", "user1", "12345", "userdata");
 
-   $sql = "insert into shareboard (id, name, subject, partnmae, cartype, location, price, partnum, content, regist_day, hit,  file_name, file_type, file_copied) ";
-   $sql .= "values('$userid', '$username', '$subject', '$partname', '$cartype', '$location', '$price', '$content', '$regist_day', 0, ";
+   $sql = "insert into board (id, name, subject, partname, cartype, location, price, partnum, content, regist_day, hit,  file_name, file_type, file_copied) ";
+   $sql .= "values('$userid', '$username', '$subject', '$partname', '$cartype', '$location', '$price', '$partnum', '$content', '$regist_day', 0, ";
    $sql .= "'$upfile_name', '$upfile_type', '$copied_file_name')";
    mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
-1
-   // 포인트 부여하기
-     $point_up = 100;
-
-   $sql = "select point from members where id='$userid'";
-   $result = mysqli_query($con, $sql);
-   $row = mysqli_fetch_array($result);
-   $new_point = $row["point"] + $point_up;
-   
-   $sql = "update members set point=$new_point where id='$userid'";
-   mysqli_query($con, $sql);
 
    mysqli_close($con);                // DB 연결 끊기
 

@@ -18,15 +18,11 @@
 <body> 
 	
 	
-<div class ="col-sm-3">
-    
-    </div>
-
-
+	<section>
 	</div>
 	<div id="board_box">
 		<h3>
-			가격 공유
+			신청·참여 > 자료신청
 		</h3>
 		<ul id="board_list">
 			<li>
@@ -44,7 +40,7 @@
 				$page = 1;
 
 			$con = mysqli_connect("localhost", "user1", "12345", "userdata");
-			$sql = "select * from board order by num desc";
+			$sql = "select * from freeboard order by num desc";
 			$result = mysqli_query($con, $sql);
 	$total_record = mysqli_num_rows($result); // 전체 글 수
 
@@ -80,7 +76,7 @@
 		?>
 		<li>
 			<span class="col1"><?=$number?></span>
-			<span class="col2"><a href="board_view.php?num=<?=$num?>&page=<?=$page?>"><?=$subject?>&nbsp;[<?php echo $rep_count; ?>]</a></span>
+			<span class="col2"><a href="free_board_view.php?num=<?=$num?>&page=<?=$page?>"><?=$subject?>&nbsp;[<?php echo $rep_count; ?>]</a></span>
 			<span class="col3"><?=$name?></span>
 			<span class="col4"><?=$file_image?></span>
 			<span class="col5"><?=$regist_day?></span>
@@ -90,7 +86,7 @@
 		$number--;
 	}
 
-	$sql = "select * from board order by num desc limit 0,5";
+	$sql = "select * from freeboard order by num desc limit 0,5";
         // board테이블에서 num를 기준으로 내림차순해서 5개까지 표시
 	$sql1 = mysqli_query($con, $sql);
 	while($board = $sql1->fetch_array())
@@ -117,7 +113,7 @@
       	if ($total_page>=2 && $page >= 2)	
       	{
       		$new_page = $page-1;
-      		echo "<li><a href='board_list.php?page=$new_page'>◀ 이전</a> </li>";
+      		echo "<li><a href='free_board_list.php?page=$new_page'>◀ 이전</a> </li>";
       	}		
       	else 
       		echo "<li>&nbsp;</li>";
@@ -131,25 +127,25 @@
 		}
 		else
 		{
-			echo "<li><a href='board_list.php?page=$i'> $i </a><li>";
+			echo "<li><a href='free_board_list.php?page=$i'> $i </a><li>";
 		}
 	}
 	if ($total_page>=2 && $page != $total_page)		
 	{
 		$new_page = $page+1;	
-		echo "<li> <a href='board_list.php?page=$new_page'>다음 ▶</a> </li>";
+		echo "<li> <a href='free_board_list.php?page=$new_page'>다음 ▶</a> </li>";
 	}
 	else 
 		echo "<li>&nbsp;</li>";
 	?>
 </ul> <!-- page -->	    	
 <ul class="buttons">
-	<li><button onclick="location.href='board_list.php'">목록</button></li>
+	<li><button onclick="location.href='free_board_list.php'">목록</button></li>
 	<li>
 		<?php 
 		if($userid) {
 			?>
-			<button onclick="location.href='board_form.php'">글쓰기</button>
+			<button onclick="location.href='free_board_form.php'">글쓰기</button>
 			<?php
 		} else {
 			?>
