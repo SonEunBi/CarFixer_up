@@ -82,6 +82,7 @@
 
 			for($k=0; $k<count($_POST['partname']); $k++){
 				$rspartname = $_POST['partname'][$k];
+				$imgnum= $k;
 			}
 			for($j=0; $j<count($_POST['location']); $j++){
 				$rslocation = $_POST['location'][$j];
@@ -96,8 +97,8 @@
 			$name=null;
 			echo "<br>   <br>";
 		}
-		$con = mysqli_connect("localhost", "user1", "12345", "carinfo");
-		$sql = "select * from usercar where location = '$rslocation' and partname = '$rspartname' and cartype = '$rscartype'";
+		$con = mysqli_connect("localhost", "user1", "12345", "userdata");
+		$sql = "select * from board where location = '$rslocation' and partname = '$rspartname' and cartype = '$rscartype'";
 
 		$result = mysqli_query($con, $sql);
 		$row=mysqli_fetch_array($result);
@@ -146,12 +147,13 @@
   			<?php
   		}
   	}
-  	mysqli_close($con);
+  	// $con = mysqli_connect("localhost", "user1", "12345", "carinfo");
+  	// $sql = "select round(avg(price),0) as avg 
+  	// from usercar 
+  	// where location = '$rslocation' and cartype='$rscartype' and partname='$rspartname'";
 
-
-  	$con = mysqli_connect("localhost", "user1", "12345", "carinfo");
   	$sql = "select round(avg(price),0) as avg 
-  	from usercar 
+  	from board 
   	where location = '$rslocation' and cartype='$rscartype' and partname='$rspartname'";
 
   	$result = mysqli_query($con, $sql);
@@ -175,18 +177,9 @@
   			<?php
 
   			$image = array("01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg", "06.jpg", "07.jpg", "08.jpg");
-
-  			if(isset($_POST['partname'])){
-  				for($k=1; $k<=count($_POST['partname']); $k++){  
-  					$rspartname = $_POST['partname'][$k]; 					
-  					break;
-  				} 		
-
-
-  			}
   			?>
 <tbody>
-  			<td><img src = "/img/<?=$image[$k]?>" 
+  			<td><img src = "img/<?=$image[$imgnum+1]?>" 
   				width="80", height="80" /></td>
   				<td><mark><?= $partname ?></mark></td>
   				<td><mark><?= $cartype ?></mark></td>

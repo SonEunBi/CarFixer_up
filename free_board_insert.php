@@ -23,6 +23,7 @@
 	$subject = htmlspecialchars($subject, ENT_QUOTES);
 	$content = htmlspecialchars($content, ENT_QUOTES);
 
+
 	$regist_day = date("Y-m-d (H:i)");  // 현재의 '년-월-일-시-분'을 저장
 
 	$upload_dir = './data/';
@@ -79,16 +80,6 @@
 	$sql .= "'$upfile_name', '$upfile_type', '$copied_file_name')";
 	mysqli_query($con, $sql);  // $sql 에 저장된 명령 실행
 
-	// 포인트 부여하기
-  	$point_up = 100;
-
-	$sql = "select point from members where id='$userid'";
-	$result = mysqli_query($con, $sql);
-	$row = mysqli_fetch_array($result);
-	$new_point = $row["point"] + $point_up;
-	
-	$sql = "update members set point=$new_point where id='$userid'";
-	mysqli_query($con, $sql);
 
 	mysqli_close($con);                // DB 연결 끊기
 

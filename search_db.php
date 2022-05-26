@@ -50,49 +50,49 @@
           부품명</th></center>
           <td width =600> &nbsp;
             <input type="checkbox" id="ch_chk"id="checkAll" name ="partname"><label for id="checkAll"><b>전체</b></label>&emsp;
-           <input type="checkbox" id="ch_chk"name ="partname[]" class="chk" value="범퍼" checked> <label for id="ch_chk"><label for id="ch_chk">범퍼</label>&emsp;
-           <input type="checkbox" id="ch_chk"name ="partname[]" class="chk" value="보넷"><label for id="ch_chk">보넷</label>&emsp;
-           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="트렁크"><label for id="ch_chk">트렁크</label>&emsp;
-           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="루프"><label for id="ch_chk">루프</label>&emsp; 
-           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="도어"><label for id="ch_chk">도어</label>&emsp; 
-           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="스테프"><label for id="ch_chk">스테프</label>&emsp;
-           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="휀더"><label for id="ch_chk">휀더</label>&emsp;
-           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="기타"><label for id="ch_chk">기타</label>&emsp;
+           <input type="checkbox" id="ch_chk"name ="partname[]" class="chk" value="bumper" checked> <label for id="ch_chk"><label for id="ch_chk">범퍼</label>&emsp;
+           <input type="checkbox" id="ch_chk"name ="partname[]" class="chk" value="bonnet"><label for id="ch_chk">보넷</label>&emsp;
+           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="trunk"><label for id="ch_chk">트렁크</label>&emsp;
+           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="loop"><label for id="ch_chk">루프</label>&emsp; 
+           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="door"><label for id="ch_chk">도어</label>&emsp; 
+           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="staff"><label for id="ch_chk">스테프</label>&emsp;
+           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="fender"><label for id="ch_chk">휀더</label>&emsp;
+           <input type="checkbox" id="ch_chk"class="chk"name ="partname[]" value="etc"><label for id="ch_chk">기타</label>&emsp;
           </td></tr>
 
 
           <tr height=80 ><th width= 200><center>차종</center></th></div>&nbsp;
             <td width =600> &nbsp;
-             <input type="checkbox" id="ch_chk"name ="cartype[]" value="세단"><label for id="ch_chk">세단</label>&emsp;
-             <input type="checkbox" id="ch_chk"name ="cartype[]" value="쿠페"><label for id="ch_chk">쿠페</label>&emsp;
-             <input type="checkbox" id="ch_chk"name ="cartype[]" value="왜건"><label for id="ch_chk">왜건</label>&emsp;
-             <input type="checkbox" id="ch_chk"name ="cartype[]" value="SUV" checked>SUV</label>&emsp; 
-             <input type="checkbox" id="ch_chk"name ="cartype[]" value="컨버터블"><label for id="ch_chk">컨버터블</label><br><br>  &nbsp;
-             <input type="checkbox" id="ch_chk"name ="cartype[]" value="해치백"><label for id="ch_chk">해치백</label>&emsp; 
-             <input type="checkbox" id="ch_chk"name ="cartype[]" value="리무진"><label for id="ch_chk">리무진</label>&emsp; 
-             <input type="checkbox" id="ch_chk"name ="cartype[]" value="밴"><label for id="ch_chk">밴</label>&emsp; 
-             <input type="checkbox" id="ch_chk"name ="cartype[]" value="픽업트럭"><label for id="ch_chk">픽업트럭</label>&emsp; 
+             <input type="checkbox" id="ch_chk"name ="cartype[]" value="sedan"><label for id="ch_chk">세단</label>&emsp;
+             <input type="checkbox" id="ch_chk"name ="cartype[]" value="coupe"><label for id="ch_chk">쿠페</label>&emsp;
+             <input type="checkbox" id="ch_chk"name ="cartype[]" value="wagon"><label for id="ch_chk">왜건</label>&emsp;
+             <input type="checkbox" id="ch_chk"name ="cartype[]" value="suv" checked>SUV</label>&emsp; 
+             <input type="checkbox" id="ch_chk"name ="cartype[]" value="convertible"><label for id="ch_chk">컨버터블</label><br><br>  &nbsp;
+             <input type="checkbox" id="ch_chk"name ="cartype[]" value="hatchback"><label for id="ch_chk">해치백</label>&emsp; 
+             <input type="checkbox" id="ch_chk"name ="cartype[]" value="limousine"><label for id="ch_chk">리무진</label>&emsp; 
+             <input type="checkbox" id="ch_chk"name ="cartype[]" value="van"><label for id="ch_chk">밴</label>&emsp; 
+             <input type="checkbox" id="ch_chk"name ="cartype[]" value="pickuptrunk"><label for id="ch_chk">픽업트럭</label>&emsp; 
             </td></tr>
 
 
             <tr height=80 ><th width= 200><center>카센터 위치</center></th></div>
               <td width =600> &nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="서울" checked><label for id="ch_chk">서울</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="부산"><label for id="ch_chk">부산</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="대구"><label for id="ch_chk">대구</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="인천"><label for id="ch_chk">인천</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="광주"><label for id="ch_chk">광주</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="대전"><label for id="ch_chk">대전</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="울산"><label for id="ch_chk">울산</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="강원"><label for id="ch_chk">강원</label>&nbsp;<br><br>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="경기"><label for id="ch_chk">경기</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="경남"><label for id="ch_chk">경남</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="경북"><label for id="ch_chk">경북</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="전남"><label for id="ch_chk">전남</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="전북"><label for id="ch_chk">전북</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="제주"><label for id="ch_chk">제주</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="충남"><label for id="ch_chk">충남</label>&nbsp;
-              <input type="checkbox" id="ch_chk"name ="location[]" value="충북"><label for id="ch_chk">충북</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="1" checked><label for id="ch_chk">서울</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="2"><label for id="ch_chk">부산</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="3"><label for id="ch_chk">대구</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="4"><label for id="ch_chk">인천</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="5"><label for id="ch_chk">광주</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="6"><label for id="ch_chk">대전</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="7"><label for id="ch_chk">울산</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="8"><label for id="ch_chk">강원</label>&nbsp;<br><br>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="9"><label for id="ch_chk">경기</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="10"><label for id="ch_chk">경남</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="11"><label for id="ch_chk">경북</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="12"><label for id="ch_chk">전남</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="13"><label for id="ch_chk">전북</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="14"><label for id="ch_chk">제주</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="15"><label for id="ch_chk">충남</label>&nbsp;
+              <input type="checkbox" id="ch_chk"name ="location[]" value="16"><label for id="ch_chk">충북</label>&nbsp;
              </td></tr>
            </table></center>
 

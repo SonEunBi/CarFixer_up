@@ -22,7 +22,7 @@
 	</div>
 	<div id="board_box">
 		<h3>
-			신청·참여 > 자료신청
+			자유게시판
 		</h3>
 		<ul id="board_list">
 			<li>

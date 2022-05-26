@@ -72,12 +72,12 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class ="col-sm-6">
-                                            <img src="img/08.jpg">
+                                            <img src="img/quote5.png">
                                         </div>
                                         <div class ="col-sm-6">
-                                            <h2>파악하기에 너무 많은 부품<br>
-                                                <strong>사진 한 장이면 견적 완료!</strong></h2><br>
-                                                <h5>'부셔진 차'는 너무나도 많은 부품 때문에 골치 아프셨던 분들이 더 편리하게 견적을 볼 수 있는 방법을 생각합니다.</h5>
+                                            <h2>많은 사진도 몇 초만에 파손 검출 가능<br>
+                                                <strong>한 장부터 여러 장까지</strong></h2><br>
+                                                <h5>'부셔진 차'는 단체 견적을 필요로 하는 사용자들에게 더 나은 성과를 제공하고,  더 나은 경험을 제공하는 모델을 구축하였습니다. 대용량 사진을 스크롤하여 한 번에 파손 검출을 확인하세요.</h5>
                                             </div>
                                         </div>
 

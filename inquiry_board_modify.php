@@ -7,7 +7,7 @@
     $content = $_POST["content"];
           
     $con = mysqli_connect("localhost", "user1", "12345", "sample");
-    $sql = "update board set subject='$subject', content='$content' ";
+    $sql = "update inquiryboard set subject='$subject', content='$content' ";
     $sql .= " where num=$num";
     mysqli_query($con, $sql);
 
@@ -28,7 +28,7 @@
     $content = $_POST["content"];
           
     $con = mysqli_connect("localhost", "user1", "12345", "sample");
-    $sql = "update board set subject='$subject', content='$content' ";
+    $sql = "update inquiryboard set subject='$subject', content='$content' ";
     $sql .= " where num=$num";
     mysqli_query($con, $sql);
 

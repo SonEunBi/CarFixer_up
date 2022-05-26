@@ -23,6 +23,7 @@
    $subject = htmlspecialchars($subject, ENT_QUOTES);
    $content = htmlspecialchars($content, ENT_QUOTES);
 
+
    $partname = $_POST['partname'];
    $cartype = $_POST['cartype'];
    $location = $_POST['location'];
