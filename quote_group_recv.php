@@ -12,7 +12,7 @@
 
     
     //요청 서버 URL 셋팅 
-    $url = "http://172.19.99.61:8080/assessment"; 
+    $url = "http://172.19.88.62:8081/assessment"; 
     //추가할 헤더값이 있을시 추가하면 됨 
     $headers = array( "content-type: application/json", "accept-encoding: gzip" ); 
     //POST방식으로 보낼 JSON데이터 생성 
