@@ -25,4 +25,4 @@ def upload_and_classify():
 		return json.dumps(model_results)
 
 if __name__ == '__main__':
-	app.run(host='0.0.0.0', port=8080, debug=True, use_reloader=False) # remember to set back to False	
+	app.run(host='0.0.0.0', port=8081, debug=True, use_reloader=False) # remember to set back to False	

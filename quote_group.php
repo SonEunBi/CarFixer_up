@@ -43,13 +43,13 @@ set_time_limit(0);
   <div id="dropZone">
     <img width="130px" height="110px" id="quote_img" src="./img/upload-files.png">
     <div>
-    <span id="imgtext">Drop images to upload</span>
+      <label>Drop images to upload</label>
     </div>
   </div>
   <input type="file" id="input_file" name="input_file[]" multiple style="left: 100px;" hidden>
-  <label class="btn_quote" for="submit_file">단체 견적 확인하기</label>
   <input type="button" id="submit_file" onclick="uploadFile(); return false;" style = "display:none"/>
 </form>
+<label class="btn_quote" for="submit_file">단체 견적 확인하기</label>
 <table class="table" width="800px" border="1px">
         <tbody id="fileTableTbody">
         </tbody>
