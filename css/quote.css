@@ -10,6 +10,7 @@
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
+  margin-bottom: 70px;
 }
 .btn_quote:hover{
   background:#fff;
@@ -50,12 +51,12 @@ position: absolute;
 left:350px;
 
 }
-span.guide{
-    position: absolute;
-    float:right;
-    right:400px;
+div.guide{
+    position: flex;
     text-align: left;
-    width:700px;
+    width:60%;
+    margin-left: 20%;
+    padding-bottom: 10%;
     font-weight: bold;
     font-size: 15px;
 }
@@ -84,5 +85,6 @@ label{
   -webkit-user-drag: none;
 }
 #resultTable{
+  margin-top: 70px;
   margin-bottom: 70px;
 }

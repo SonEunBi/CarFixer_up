@@ -9,16 +9,19 @@
     // 전송된 파일 개수
 
     $fileNum= count($files['name']);
+    $damagedNum = 0;
 
     
     //요청 서버 URL 셋팅 
-    $url = "http://220.123.251.12:8081/assessment"; 
+    $url = "http://172.19.88.20:8081/assessment"; 
     //추가할 헤더값이 있을시 추가하면 됨 
     $headers = array( "content-type: application/json", "accept-encoding: gzip" ); 
     //POST방식으로 보낼 JSON데이터 생성 
 
     $arr_post = array(); 
     $filename = array();
+    $damagedName = array();
+    $damagedSrc = array();
 
     $file_path = realpath(__FILE__); //php파일의 절대 서버 경로
 
@@ -109,6 +112,11 @@
     </div>
     </section> <br><br>
     <center>
+        <div id="resultBox">
+            <label>총 이미지 수 : <?php echo $fileNum?></label>
+            <br>
+            <label>파손 이미지 수 : <?php echo $damagedNum?></label>
+        </div>
         <div id="resultTable" style="width:80%; height:1000px; overflow:auto">
         <table style="width:80%;" border="1">
             <tr>
@@ -121,9 +129,40 @@
                     $img_path = $filename[$i];
                     ?>
                     <tr>
-                        <td><img style="width:300px; height:280px;" id="result" src=<?=$img_path?>></td>
+                        <td><img style="width:50px; height:40px;" id="result" src=<?=$img_path?>></td>
                         <td><label> <?php echo $files['name'][$i]; ?></label></td>
-                        <td><label> <?php if($json_data[$i] == '1'){echo "Damaged";} else{echo "Clear";}?> </label></td>
+                        <td><label> 
+                            <?php if($json_data[$i] == '1'){
+                                echo "Damaged";
+                                $damagedSrc[$i] = $filename[$i];
+                                $damagedName[$i] = $files['name'][$i];
+                                $damagedNum++;
+                        } else{echo "Clear";}?> </label></td>
+                    </tr>
+                    <?php
+                }
+            ?>
+        </table>
+        </div>
+        <div id="board_box">
+            <h1 id="board_title"></h1>
+            <br>
+            <h3>파손 이미지만 보기</h3>
+        </div>
+        <div id="resultTable" style="width:80%; height:1000px; overflow:auto">
+        <table style="width:80%;" border="1">
+            <tr>
+                <th>이미지</th>
+                <th>파일명</th>
+                <th>파손여부</th>
+            </tr>
+            <?php
+                for($i = 0; $i < count($damagedSrc); $i++){
+                    ?>
+                    <tr>
+                        <td><img style="width:300px; height:280px;" id="result" src=<?=$damagedSrc[$i]?>></td>
+                        <td><label> <?php echo $damagedName[$i];?></label></td>
+                        <td><label> Damaged </label></td>
                     </tr>
                     <?php
                 }

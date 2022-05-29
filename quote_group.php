@@ -50,10 +50,12 @@ set_time_limit(0);
   <input type="button" id="submit_file" onclick="uploadFile(); return false;" style = "display:none"/>
 </form>
 <label class="btn_quote" for="submit_file">단체 견적 확인하기</label>
+<div id="resultTable" style="width:80%; height:500px; overflow:auto">
 <table class="table" width="800px" border="1px">
         <tbody id="fileTableTbody">
         </tbody>
 </table>
+</div>
 </center>
 
 <footer class="footerG">
