@@ -13,7 +13,7 @@
 
     
     //요청 서버 URL 셋팅 
-    $url = "http://172.19.88.20:8081/assessment"; 
+    $url = "http://172.19.98.84:8081/assessment"; 
     //추가할 헤더값이 있을시 추가하면 됨 
     $headers = array( "content-type: application/json", "accept-encoding: gzip" ); 
     //POST방식으로 보낼 JSON데이터 생성 
@@ -96,7 +96,6 @@
     <header>
         <?php include "header.php";?>
     </header>
-
     <section>
     <div id="board_box">
         <h1 id="board_title"></h1>
@@ -117,7 +116,7 @@
             <br>
             <label>파손 이미지 수 : <?php echo $damagedNum?></label>
         </div>
-        <div id="resultTable" style="width:80%; height:1000px; overflow:auto">
+        <div class="resultTable" id="allRet" style="width:80%; height:1000px; overflow:auto">
         <table style="width:80%;" border="1">
             <tr>
                 <th>이미지</th>
@@ -134,8 +133,8 @@
                         <td><label> 
                             <?php if($json_data[$i] == '1'){
                                 echo "Damaged";
-                                $damagedSrc[$i] = $filename[$i];
-                                $damagedName[$i] = $files['name'][$i];
+                                $damagedSrc[$damagedNum] = $filename[$i];
+                                $damagedName[$damagedNum] = $files['name'][$i];
                                 $damagedNum++;
                         } else{echo "Clear";}?> </label></td>
                     </tr>
@@ -144,12 +143,12 @@
             ?>
         </table>
         </div>
-        <div id="board_box">
+        <div id="board_box" hidden>
             <h1 id="board_title"></h1>
             <br>
             <h3>파손 이미지만 보기</h3>
         </div>
-        <div id="resultTable" style="width:80%; height:1000px; overflow:auto">
+        <div class="resultTable" id="damagedRet" style="width:80%; height:1000px; overflow:auto">
         <table style="width:80%;" border="1">
             <tr>
                 <th>이미지</th>
@@ -169,8 +168,10 @@
             ?>
         </table>
         </div>
-        <input type="button" id="btn" style="display:none"/>
-        <label class="btn_quote" for="btn">결과파일 다운로드</label>
+        <script src="js/quote.js" type="text/javascript"></script>
+        <label class="btn_quote" id="allRet" onclick="showResult(); return false;">전체 결과 보기</label>
+        <label class="btn_quote" id="damagedRet" onclick="showDamagedResult(); return false;">파손 이미지만 보기</label>
+        <label class="btn_quote" id="ret_down">결과파일 다운로드</label>
         <script>
             function download(filename, textInput) {
                 var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(filename));
@@ -181,7 +182,7 @@
                 element.click();
                 //document.body.removeChild(element);
             }
-                document.querySelector(".btn_quote")    
+                document.querySelector("#ret_down")    
                   .addEventListener("click", function () {
                         var text = "<?=$dst_path?>";
                         var filename = <?=$result_jsondata?>;
@@ -189,6 +190,7 @@
             }, false);
         </script>
     </center>
+    <script> initTable(); </script>
     <footer class="footerG">
     <?php include "footer.php";?>
     </footer>
